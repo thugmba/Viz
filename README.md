@@ -1,5 +1,4 @@
 James
-
 Tunghai University, Taiwan
 
 # Data Visualization Analysis
