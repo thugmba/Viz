@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="James">
+<meta name="dcterms.date" content="2024-11-25">
 
 <title>Axes</title>
 <style>
@@ -3080,10 +3081,37 @@ vertical-align: -.125em;
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#box-plot" id="toc-box-plot" class="nav-link active" data-scroll-target="#box-plot">1. Box plot</a></li>
+  <li><a href="#swap-x-and-y-axes" id="toc-swap-x-and-y-axes" class="nav-link" data-scroll-target="#swap-x-and-y-axes">2. Swap X and Y axes</a></li>
+  <li><a href="#arrange-two-plots-side-by-side" id="toc-arrange-two-plots-side-by-side" class="nav-link" data-scroll-target="#arrange-two-plots-side-by-side">3. Arrange two plots side by side</a></li>
+  <li><a href="#setting-the-range-of-a-continuous-axis" id="toc-setting-the-range-of-a-continuous-axis" class="nav-link" data-scroll-target="#setting-the-range-of-a-continuous-axis">4. Setting the Range of a Continuous Axis</a></li>
+  <li><a href="#reversing-a-continuous-axis" id="toc-reversing-a-continuous-axis" class="nav-link" data-scroll-target="#reversing-a-continuous-axis">5. Reversing a Continuous Axis</a></li>
+  <li><a href="#practice-multiple-charts-from-iris" id="toc-practice-multiple-charts-from-iris" class="nav-link" data-scroll-target="#practice-multiple-charts-from-iris">6. Practice: Multiple charts from Iris</a></li>
+  <li><a href="#setting-the-scaling-ratio-of-the-x--and-y-axes" id="toc-setting-the-scaling-ratio-of-the-x--and-y-axes" class="nav-link" data-scroll-target="#setting-the-scaling-ratio-of-the-x--and-y-axes">7. Setting the Scaling Ratio of the X- and Y-Axes</a></li>
+  <li><a href="#setting-the-positions-of-tick-marks" id="toc-setting-the-positions-of-tick-marks" class="nav-link" data-scroll-target="#setting-the-positions-of-tick-marks">8. Setting the Positions of Tick Marks</a></li>
+  <li><a href="#removing-tick-marks-and-labels" id="toc-removing-tick-marks-and-labels" class="nav-link" data-scroll-target="#removing-tick-marks-and-labels">9. Removing Tick Marks and Labels</a></li>
+  <li><a href="#changing-the-text-of-tick-labels" id="toc-changing-the-text-of-tick-labels" class="nav-link" data-scroll-target="#changing-the-text-of-tick-labels">10. Changing the Text of Tick Labels</a></li>
+  <li><a href="#lower-tallish-to-include-6-people" id="toc-lower-tallish-to-include-6-people" class="nav-link" data-scroll-target="#lower-tallish-to-include-6-people">11. Lower ‘Tallish’ to include 6 people</a></li>
+  <li><a href="#changing-the-appearance-of-tick-labels" id="toc-changing-the-appearance-of-tick-labels" class="nav-link" data-scroll-target="#changing-the-appearance-of-tick-labels">12. Changing the Appearance of Tick Labels</a></li>
+  <li><a href="#changing-the-text-of-axis-labels" id="toc-changing-the-text-of-axis-labels" class="nav-link" data-scroll-target="#changing-the-text-of-axis-labels">13. Changing the Text of Axis Labels</a></li>
+  <li><a href="#removing-axis-labels" id="toc-removing-axis-labels" class="nav-link" data-scroll-target="#removing-axis-labels">14. Removing Axis Labels</a></li>
+  <li><a href="#changing-the-appearance-of-axis-labels" id="toc-changing-the-appearance-of-axis-labels" class="nav-link" data-scroll-target="#changing-the-appearance-of-axis-labels">15. Changing the Appearance of Axis Labels</a></li>
+  <li><a href="#showing-lines-along-the-axes" id="toc-showing-lines-along-the-axes" class="nav-link" data-scroll-target="#showing-lines-along-the-axes">16. Showing Lines Along the Axes</a></li>
+  <li><a href="#using-a-logarithmic-axis" id="toc-using-a-logarithmic-axis" class="nav-link" data-scroll-target="#using-a-logarithmic-axis">17. Using a Logarithmic Axis</a></li>
+  <li><a href="#making-a-circular-plot" id="toc-making-a-circular-plot" class="nav-link" data-scroll-target="#making-a-circular-plot">18. Making a Circular Plot</a></li>
+  <li><a href="#rotate-the-labels-on-x-axis" id="toc-rotate-the-labels-on-x-axis" class="nav-link" data-scroll-target="#rotate-the-labels-on-x-axis">19. Rotate the labels on x axis</a></li>
+  <li><a href="#using-relative-times-on-an-axis" id="toc-using-relative-times-on-an-axis" class="nav-link" data-scroll-target="#using-relative-times-on-an-axis">20. Using Relative Times on an Axis</a></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -3102,6 +3130,12 @@ vertical-align: -.125em;
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 25, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -3278,8 +3312,8 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </div>
 </div>
 </section>
-<section id="iris" class="level2">
-<h2 class="anchored" data-anchor-id="iris">6. Iris</h2>
+<section id="practice-multiple-charts-from-iris" class="level2">
+<h2 class="anchored" data-anchor-id="practice-multiple-charts-from-iris">6. Practice: Multiple charts from Iris</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length)) <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
