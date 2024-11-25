@@ -3159,8 +3159,8 @@ vertical-align: -.125em;
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(PlantGrowth, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Group vs Weight&#39;</span>, </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Group&#39;</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Group vs Weight&#39;</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Group&#39;</span>,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Weight&#39;</span>,</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&#39;By James, DV, THU, 2024&#39;</span>) <span class="sc">+</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3237,6 +3237,9 @@ vertical-align: -.125em;
 </section>
 <section id="setting-the-range-of-a-continuous-axis" class="level2">
 <h2 class="anchored" data-anchor-id="setting-the-range-of-a-continuous-axis">4. Setting the Range of a Continuous Axis</h2>
+<ul>
+<li><code>ylim()</code>: Sets the limits of the y-axis.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PlantGrowth, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
@@ -3269,6 +3272,9 @@ vertical-align: -.125em;
 </section>
 <section id="reversing-a-continuous-axis" class="level2">
 <h2 class="anchored" data-anchor-id="reversing-a-continuous-axis">5. Reversing a Continuous Axis</h2>
+<ul>
+<li><code>scale_y_reverse()</code> reverses the direction of the y-axis on a plot. So, what was previously the highest value on the y-axis becomes the lowest, and vice-versa.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PlantGrowth, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
@@ -3314,6 +3320,9 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="practice-multiple-charts-from-iris" class="level2">
 <h2 class="anchored" data-anchor-id="practice-multiple-charts-from-iris">6. Practice: Multiple charts from Iris</h2>
+<ul>
+<li><code>grid.arrange()</code> function from the gridExtra package in R to arrange four plots (named plot1, plot2, plot3, and plot4) into a single figure.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Sepal.Length)) <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
@@ -3337,6 +3346,9 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="setting-the-scaling-ratio-of-the-x--and-y-axes" class="level2">
 <h2 class="anchored" data-anchor-id="setting-the-scaling-ratio-of-the-x--and-y-axes">7. Setting the Scaling Ratio of the X- and Y-Axes</h2>
+<ul>
+<li><code>coord_fixed()</code> is a function that fixes the aspect ratio of the plot. This means that the units on the x-axis and y-axis will be of equal length.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gcookbook)  </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -3360,6 +3372,9 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="setting-the-positions-of-tick-marks" class="level2">
 <h2 class="anchored" data-anchor-id="setting-the-positions-of-tick-marks">8. Setting the Positions of Tick Marks</h2>
+<ul>
+<li><code>scale_y_continuous()</code> is a function used to control the y-axis of a plot when the y-axis variable is continuous (meaning it can take on any value within a range, like temperature, weight, or time).</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PlantGrowth, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
@@ -3411,6 +3426,10 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="changing-the-text-of-tick-labels" class="level2">
 <h2 class="anchored" data-anchor-id="changing-the-text-of-tick-labels">10. Changing the Text of Tick Labels</h2>
+<ul>
+<li><p><code>breaks</code>: Specifying the locations of the tick marks and labels on the y-axis (breaks = seq(min, max, by = interval)). This gives you more control over the spacing and readability of the axis labels.</p></li>
+<li><p><code>labels</code>: Customizing the text of the axis labels (labels = function(x) …). This allows for formatting, unit specification, or abbreviation of the labels.</p></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gcookbook)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -3463,6 +3482,10 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="changing-the-appearance-of-tick-labels" class="level2">
 <h2 class="anchored" data-anchor-id="changing-the-appearance-of-tick-labels">12. Changing the Appearance of Tick Labels</h2>
+<ul>
+<li><p><code>axis.text.x = element_text(...)</code>: This part specifically targets the text elements of the x-axis. element_text is a function that controls the formatting of text within the plot.</p></li>
+<li><p><code>angle = 30</code>: This rotates the x-axis labels by 30 degrees. This is often useful when labels are long and overlapping.</p></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pg_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PlantGrowth, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
@@ -3531,6 +3554,9 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="changing-the-appearance-of-axis-labels" class="level2">
 <h2 class="anchored" data-anchor-id="changing-the-appearance-of-axis-labels">15. Changing the Appearance of Axis Labels</h2>
+<ul>
+<li><code>axis.title.x = element_text(...)</code>: This specifies that we’re modifying the x-axis title. element_text is used to set text properties.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(heightweight, <span class="fu">aes</span>(<span class="at">x =</span> ageYear, <span class="at">y =</span> heightIn)) <span class="sc">+</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
@@ -3550,6 +3576,9 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="showing-lines-along-the-axes" class="level2">
 <h2 class="anchored" data-anchor-id="showing-lines-along-the-axes">16. Showing Lines Along the Axes</h2>
+<ul>
+<li><code>axis.line = element_line(colour = &quot;black&quot;)</code>: This is an argument within the theme() function. It specifically targets the axis lines.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(heightweight, <span class="fu">aes</span>(<span class="at">x =</span> ageYear, <span class="at">y =</span> heightIn)) <span class="sc">+</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
@@ -3570,6 +3599,9 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="using-a-logarithmic-axis" class="level2">
 <h2 class="anchored" data-anchor-id="using-a-logarithmic-axis">17. Using a Logarithmic Axis</h2>
+<ul>
+<li><code>scale_x_log10()</code>: It specifically applies a base-10 logarithmic transformation to the x-axis of a ggplot2 plot.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Animals, <span class="fu">aes</span>(<span class="at">x =</span> body, <span class="at">y =</span> brain, <span class="at">label =</span> <span class="fu">rownames</span>(Animals))) <span class="sc">+</span></span>
@@ -3590,6 +3622,9 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="making-a-circular-plot" class="level2">
 <h2 class="anchored" data-anchor-id="making-a-circular-plot">18. Making a Circular Plot</h2>
+<ul>
+<li><code>coord_polar()</code>: It transforms a Cartesian coordinate system (the usual x-y plane) into a polar coordinate system. In a polar coordinate system, points are defined by their distance from the origin (radius) and their angle from a reference direction (usually the positive x-axis, measured in radians or degrees).</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wind, <span class="fu">aes</span>(<span class="at">x =</span> DirCat, <span class="at">fill =</span> SpeedCat)) <span class="sc">+</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>, <span class="at">boundary =</span> <span class="sc">-</span><span class="fl">7.5</span>) <span class="sc">+</span></span>
@@ -3610,6 +3645,11 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </section>
 <section id="rotate-the-labels-on-x-axis" class="level2">
 <h2 class="anchored" data-anchor-id="rotate-the-labels-on-x-axis">19. Rotate the labels on x axis</h2>
+<ul>
+<li><code>element_text(angle = 30, hjust = 1)</code> modifies the properties of the x-axis label text.</li>
+<li><code>angle = 30</code> rotates the labels by 30 degrees. This is often useful when labels are long and might otherwise overlap.</li>
+<li><code>hjust = 1</code> sets the horizontal justification of the text to the right. This aligns the rotated labels neatly. A value of 0 would align them to the left, and 0.5 would center them.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -3665,6 +3705,11 @@ Attaching package: &#39;dplyr&#39;</code></pre>
 </section>
 <section id="using-relative-times-on-an-axis" class="level2">
 <h2 class="anchored" data-anchor-id="using-relative-times-on-an-axis">20. Using Relative Times on an Axis</h2>
+<ul>
+<li><code>scale_x_continuous()</code>: It’s used to control the x-axis when creating a plot. Specifically, it’s used to modify the continuous x-axis.</li>
+<li><code>breaks</code>: Defining where the tick marks appear on the x-axis (breaks = seq(min, max, by = interval)).</li>
+<li><code>labels</code>: Changing the text displayed at each tick mark (labels = …)</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert WWWusage time-series object to data frame</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>www <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
